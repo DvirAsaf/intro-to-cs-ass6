@@ -18,6 +18,8 @@ struct Dictionary{
 Dictionary* initDictionary()
 {
     Dictionary* dict = (Dictionary*)malloc(sizeof(struct Dictionary));
+    if(dict == NULL)
+        return NULL;
     dict->head = NULL;
     dict->size = 0;
     return dict;
@@ -34,7 +36,10 @@ Result putInDictionary(Dictionary* d, int key, int value)
     {
         Node* temp = (Node*)malloc(sizeof(Node));
         if(temp == NULL)
+        {
+            destroyDictionary(d);
             return MEM_ERROR;
+        }
         temp->key = key;
         temp->value = value;
         temp->next = NULL;
@@ -125,6 +130,7 @@ void destroyDictionary(Dictionary* d)
         cure = cure->next;
         free(temp);
     }
+    free(d);
 }
 
 Dictionary* createDictionaryFromArrays(int keys[], int values[], int size)
