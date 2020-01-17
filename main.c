@@ -9,26 +9,26 @@ void showDictionary(Dictionary* dictionary) {
 
 void main() {
     Dictionary* dictionary = initDictionary();
-//    showDictionary(dictionary);
-//
-//    putInDictionary(dictionary, 1, 10);
-//    showDictionary(dictionary);
-//
-////    putInDictionary(dictionary, 1, 2);
-////    showDictionary(dictionary);
-//
+    showDictionary(dictionary);
+
+    putInDictionary(dictionary, 1, 10);
+    showDictionary(dictionary);
+
+    putInDictionary(dictionary, 1, 2);
+    showDictionary(dictionary);
+
 //    putInDictionary(dictionary, 8, 4);
 //    showDictionary(dictionary);
-//
-////    removeFromDictionary(dictionary, 1);
-//    showDictionary(dictionary);
-//
-////    removeFromDictionary(dictionary, 1);
-//    showDictionary(dictionary);
-//
-//    printf("43: %d\n", getFromDictionary(dictionary, 43));
-//    showDictionary(dictionary);
-//
+
+    removeFromDictionary(dictionary, 1);
+    showDictionary(dictionary);
+
+    removeFromDictionary(dictionary, 1);
+    showDictionary(dictionary);
+
+    printf("43: %d\n", getFromDictionary(dictionary, 43));
+    showDictionary(dictionary);
+
     destroyDictionary(dictionary);
 
     int keys[] =   {7,-61,43,-12,14,97,0,12};
@@ -42,8 +42,8 @@ void main() {
     printf("43: %d\n", value);
     showDictionary(dictionary);
 
-//    removeFromDictionary(dictionary, -12);
-//    removeFromDictionary(dictionary, 43);
+    removeFromDictionary(dictionary, -12);
+    removeFromDictionary(dictionary, 43);
     showDictionary(dictionary);
 
     destroyDictionary(dictionary);

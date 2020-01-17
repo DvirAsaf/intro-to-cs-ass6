@@ -141,10 +141,48 @@ Dictionary* createDictionaryFromArrays(int keys[], int values[], int size)
     return newDict;
 }
 
-//Result removeFromDictionary(Dictionary* d, int key)
-//{
-//
-//}
+Result removeFromDictionary(Dictionary* d, int key)
+{
+    if(!getFromDictionary(d,key)){
+        return FAILURE;
+    }
+    if(d->size == 0){
+        return FAILURE;
+    }
+    //if it is the head of the list
+    if(d->head->key == key)
+    {
+        Node* temp = d->head;
+        d->head = d->head->next;
+        if(d->head != NULL)
+        {
+            d->head->prev = NULL;
+        }
+        free(temp);
+        d->size--;
+        return SUCCESS;
+    }
+    Node* cure = d->head;
+    while(cure->key != key)
+    {
+        //go to next node
+        cure = cure->next;
+    }
+    //now cure is the one we are looking fore
+    //save cure in temp so we can delete it later
+    Node* temp = cure;
+    //make its prev to point on its next
+    cure->prev->next = cure->next;
+    //make its next to point on its prev
+    if(cure->next != NULL)
+    {
+        cure->next->prev = cure->prev;
+    }
+    //free the temp - the node we planned to delete
+    free(temp);
+    d->size--;
+    return SUCCESS;
+}
 
 
 
