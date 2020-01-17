@@ -1,0 +1,22 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+C:/Users/malac/CLionProjects/Ass6-Coral/dictionary.c
+dictionary.h
+C:/Users/malac/CLionProjects/Ass6-Coral/dictionary.h
+stdio.h
+-
+stdlib.h
+-
+
+C:/Users/malac/CLionProjects/Ass6-Coral/dictionary.h
+result.h
+C:/Users/malac/CLionProjects/Ass6-Coral/result.h
+
+C:/Users/malac/CLionProjects/Ass6-Coral/result.h
+

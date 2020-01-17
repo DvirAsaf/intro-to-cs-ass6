@@ -1,0 +1,3 @@
+C:/Users/malac/CLionProjects/Ass6-Coral/cmake-build-debug/CMakeFiles/Ass6_Coral.dir
+C:/Users/malac/CLionProjects/Ass6-Coral/cmake-build-debug/CMakeFiles/edit_cache.dir
+C:/Users/malac/CLionProjects/Ass6-Coral/cmake-build-debug/CMakeFiles/rebuild_cache.dir
