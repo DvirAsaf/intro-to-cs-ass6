@@ -1,3 +1,10 @@
+/************************************
+ * Name: Dvir Asaf
+ * ID: 313531113
+ * Group: 01
+ * Assignment: ass6
+ ***********************************/
+
 #include "dictionary.h"
 #include <stdio.h>
 #include <stdlib.h>
@@ -15,6 +22,13 @@ struct Dictionary{
     int size;
 };
 
+/************************************
+ * Function Name: initDictionary.
+ * Input: none.
+ * Output: Dictionary pointer.
+ * Function Operation: the function allocates initial memory for empty dictionary.
+ ***********************************/
+
 Dictionary* initDictionary()
 {
     Dictionary* dict = (Dictionary*)malloc(sizeof(struct Dictionary));
@@ -25,10 +39,27 @@ Dictionary* initDictionary()
     return dict;
 }
 
+/************************************
+ * Function Name: sizeOfDictionary.
+ * Input: Dictionary* d.
+ * Output: int(size of keys)
+ * Function Operation: the function return the count of keys.
+ ***********************************/
+
 int sizeOfDictionary(Dictionary* d)
 {
     return d->size;
 }
+
+/************************************
+ * Function Name: putInDictionary.
+ * Input: Dictionary* d, int key, int value.
+ * Output: Result (SUCCESS, FAILURE, MEM_ERROR).
+ * Function Operation: the function get key and value that need to be insert to the dictionary.
+ * in order to make other operations on the dictionary easier, when we insert a new element
+ * we keep the list sorted by key (increasing order).
+ * if the key is already in the list, just replace its value.
+ ***********************************/
 
 Result putInDictionary(Dictionary* d, int key, int value)
 {
@@ -96,6 +127,14 @@ Result putInDictionary(Dictionary* d, int key, int value)
     return FAILURE;
 }
 
+/************************************
+ * Function Name: getFromDictionary.
+ * Input: Dictionary* d, int key.
+ * Output: int (value)
+ * Function Operation: the function searches for element with the given key.
+ * if the dictionary does not contain the key returns 0, else returns the value of key.
+ ***********************************/
+
 int getFromDictionary(Dictionary* d, int key)
 {
     Node* cure = d->head;
@@ -107,6 +146,13 @@ int getFromDictionary(Dictionary* d, int key)
     }
     return 0;
 }
+
+/************************************
+ * Function Name: printDictionary.
+ * Input: Dictionary* d.
+ * Output: none.
+ * Function Operation: prints all elements of our dictionary.
+ ***********************************/
 
 void printDictionary(Dictionary* d)
 {
@@ -121,6 +167,13 @@ void printDictionary(Dictionary* d)
     printf("}");
 }
 
+/************************************
+ * Function Name: destroyDictionary.
+ * Input: Dictionary* d.
+ * Output: none.
+ * Function Operation: the function frees all memory which had been allocated during the program.
+ ***********************************/
+
 void destroyDictionary(Dictionary* d)
 {
     Node* cure = d->head;
@@ -132,6 +185,14 @@ void destroyDictionary(Dictionary* d)
     }
     free(d);
 }
+
+/************************************
+ * Function Name: createDictionaryFromArrays.
+ * Input: int keys[], int values[], int size.
+ * Output: Dictionary pointer.
+ * Function Operation: the function gets 2 arrays one for keys and the other for values, and get
+ * size of each array.then creates dictionary from them.
+ ***********************************/
 
 Dictionary* createDictionaryFromArrays(int keys[], int values[], int size)
 {
@@ -146,6 +207,13 @@ Dictionary* createDictionaryFromArrays(int keys[], int values[], int size)
     }
     return newDict;
 }
+
+/************************************
+ * Function Name: removeFromDictionary.
+ * Input: Dictionary* d, int key
+ * Output:  Result(SUCCESS, FAILURE, MEM_ERROR).
+ * Function Operation: get a key and delete it and its value from dictionary if exists.
+ ***********************************/
 
 Result removeFromDictionary(Dictionary* d, int key)
 {
