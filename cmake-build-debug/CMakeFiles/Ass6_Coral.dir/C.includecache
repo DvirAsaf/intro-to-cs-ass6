@@ -7,12 +7,12 @@
 #IncludeRegexTransform: 
 
 C:/Users/malac/CLionProjects/Ass6-Coral/dictionary.c
-dictionary.h
-C:/Users/malac/CLionProjects/Ass6-Coral/dictionary.h
 stdio.h
 -
 stdlib.h
 -
+dictionary.h
+C:/Users/malac/CLionProjects/Ass6-Coral/dictionary.h
 
 C:/Users/malac/CLionProjects/Ass6-Coral/dictionary.h
 result.h
